@@ -1,0 +1,272 @@
+<!DOCTYPE html1>
+<html>
+  <head>
+    <title>
+      משחק אבן נייר ומספריים
+    </title>
+    <style>
+    .buttonSize{
+      font-size: 50;
+    }
+    .pSize{
+      font-size: 30;
+    }
+    .pSize1{
+      font-size: 30;
+      color: blue;
+    }
+  </style>
+  </head>
+  <body>
+    <p>
+      משחק אבן נייר ומספריים
+    </p>
+    <button class="buttonSize"
+    onclick="
+    playerMove=1
+    AImove = Math.floor(Math.random() * 3 + 1)
+
+      if(AImove==1){
+       Ties++;
+       console.log('המחשב בחר אבן');
+        console.log('תיקו');
+        console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+        allScore =  `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+        allMove = 'אתה בחרת ✊ ,המחשב בחר✊ זה תיקו'
+        paragraph2.textContent = allMove;
+        paragraph1.textContent = allScore;
+      }
+      if(AImove===2){
+        losses++;
+        console.log('המחשב בחר נייר');
+          console.log('הפסד');
+          console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+          allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+          allMove = 'אתה בחרת ✊, המחשב בחר 📄 זה הפסד'
+          paragraph2.textContent = allMove;
+          paragraph1.textContent = allScore;
+
+          if(losses>=10){
+              wins=0
+              losses=0
+              Ties=0
+              Winstreak=0
+
+              allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+              allMove = `הפסדת את המשחק🙁`
+              WinstreakTxt= `${Winstreak}:הרצף נצחונות שלך הוא`
+
+              paragraph1.textContent = allScore;
+              paragraph2.textContent = allMove;
+              paragraph3.textContent = WinstreakTxt;
+
+              alert(`הפסדת את המשחק🙁`)
+
+              LossingSound.play()
+            }
+        }
+        if(AImove===3){
+            wins++;
+            console.log('המחשב בחר מספריים');
+            console.log('ניצחון');
+            console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+            allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+            allMove = 'אתה בחרת ✊ ,המחשב בחר✂️ זה ניצחון';
+            paragraph2.textContent = allMove;
+            paragraph1.textContent = allScore;
+
+            if(wins>=10){
+              wins=0
+              losses=0
+              Ties=0
+              Winstreak++
+
+              allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+              allMove = `you won the game🙂`;
+              WinstreakTxt= `${Winstreak}:הרצף נצחונות שלך הוא`;
+
+              paragraph2.textContent = allMove;
+              paragraph1.textContent = allScore;
+              paragraph3.textContent = WinstreakTxt;
+
+              if(WinstreakRecord<Winstreak){
+                WinstreakRecordFunction()
+              }
+
+              alert(`ניצחת את המשחק🙂`)
+
+              WinningSound.play()
+            }
+        }
+    ">
+      ✊
+    </button>
+    <button class="buttonSize"
+    onclick="
+    playerMove=2
+    AImove = Math.floor(Math.random() * 3 + 1)
+
+    if(AImove==1){
+          Ties++;
+          console.log('המחשב בחר נייר');
+          console.log('תיקו');
+          console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+          allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+          allMove = 'אתה בחרת 📄 ,המחשב בחר📄 זה תיקו'
+          paragraph2.textContent = allMove;
+          paragraph1.textContent = allScore;
+    }
+    if(AImove===2){
+          losses++;
+          console.log('המחשב בחר מספריים');
+          console.log('הפסד');
+          console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+          allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+          allMove = 'אתה בחרת 📄 ,המחשב בחר✂️ זה הפסד'
+          paragraph2.textContent = allMove;
+          paragraph1.textContent = allScore;
+          
+          if(losses>=10){
+              wins=0
+              losses=0
+              Ties=0
+              Winstreak=0
+
+              allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+              allMove = `הפסדת את המשחק🙁`
+              WinstreakTxt= `${Winstreak}:הרצף נצחונות שלך הוא`
+
+              paragraph1.textContent = allScore;
+              paragraph2.textContent = allMove;
+              paragraph3.textContent = WinstreakTxt;
+
+              alert(`הפסדת את המשחק🙁`)
+              
+              LossingSound.play()
+            }
+        }
+        if(AImove===3){
+          wins++;
+          console.log('המחשב בחר אבן');
+          console.log('ניצחון');
+          console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+          allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+          allMove = 'אתה בחרת 📄 ,המחשב בחר✊ זה ניצחון'
+          paragraph2.textContent = allMove;
+          paragraph1.textContent = allScore;
+
+          if(wins>=10){
+              wins=0
+              losses=0
+              Ties=0
+              Winstreak++
+
+              allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+              WinstreakTxt= `${Winstreak}:הרצף נצחונות שלך הוא`;
+              allMove = `ניצחת את המשחק🙂`
+
+              paragraph2.textContent = allMove;
+              paragraph1.textContent = allScore;
+              paragraph3.textContent = WinstreakTxt;
+
+              if(WinstreakRecord<Winstreak){
+                WinstreakRecordFunction()
+              }
+
+              alert(`ניצחת את המשחק🙂`)
+
+              WinningSound.play()
+            }
+        }
+    ">
+      📄
+    </button>
+    <button class="buttonSize" 
+    onclick="
+    playerMove=3
+    AImove = Math.floor(Math.random() * 3 + 1)
+   
+    if(AImove==1){
+      Ties++;
+          console.log('המחשב בחר מספריים');
+          console.log('tie');
+          console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+          allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+          allMove = 'אתה בחרת ✂️ ,המחשב בחר✂️ זה תיקו'
+          paragraph2.textContent = allMove;
+          paragraph1.textContent = allScore;
+    }
+    if(AImove===2){
+          losses++;
+          console.log('המחשב בחר אבן');
+          console.log('הפסד');
+          console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+          allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+          allMove = 'אתה בחרת ✂️ ,המחשב בחר✊ זה הפסד'
+          paragraph2.textContent = allMove;
+          paragraph1.textContent = allScore;
+
+          if(losses>=10){
+              wins=0
+              losses=0
+              Ties=0
+              Winstreak=0
+
+              allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+              allMove = `הפסדת את המשחק🙁`
+              WinstreakTxt= `${Winstreak}:הרצף נצחונות שלך הוא`
+
+              paragraph1.textContent = allScore;
+              paragraph2.textContent = allMove;
+              paragraph3.textContent = WinstreakTxt;
+
+              alert(`הפסדת את המשחק🙁`)
+              
+              LossingSound.play()
+            }
+        }
+        if(AImove===3){
+          wins++;
+          console.log('המחשב בחר נייר');
+          console.log('ניצחון');
+          console.log(`${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`);
+          allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+          allMove = 'אתה בחרת ✂️ ,המחשב בחר✊ זה ניצחון'
+          paragraph2.textContent = allMove;
+          paragraph1.textContent = allScore;
+
+          if(wins>=10){
+              wins=0
+              losses=0
+              Ties=0
+              Winstreak++;
+
+              allScore = `${Ties}: נצחונות:${wins} הפסדים:${losses} תיקוים`
+              allMove = `ניצחת את המשחק🙂`
+              WinstreakTxt= `${Winstreak}:הרצף נצחונות שלך הוא`;
+
+              paragraph2.textContent = allMove;
+              paragraph1.textContent = allScore;
+              paragraph3.textContent = WinstreakTxt;
+
+              if(WinstreakRecord<Winstreak){
+                WinstreakRecordFunction()
+              }
+
+              alert(`ניצחת את המשחק🙂`)
+
+              WinningSound.play()
+            }
+        }
+    ">
+      ✂️
+    </button>
+    
+    <p class = "pSize" id="ScoreTxt"></p>
+    <p class = "pSize" id="movesTxt"></p>
+    <p class = "pSize1" id="WinstreakClass"></p>
+    <p class = "pSize1" id="WinstreakRecordClass"></p>
+    
+    <script src="HebrewScript.js"></script>
+  </body>
+</html>

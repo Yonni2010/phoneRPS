@@ -1,4 +1,4 @@
-<body>
+body{
 .preGameButtonsClass{
         font-size: 250;
         color: blue;
@@ -7,4 +7,4 @@
         font-size: 250;
         color: green;
       }
-</body>
+}
